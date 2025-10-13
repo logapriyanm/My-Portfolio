@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import "tailwindcss";
+
+html,body {
+    overflow-x: hidden;
+}
+
+@theme {
+    --color-secondary: #87ACCA;
+    --color-primary:#0f172a;
+    --font-primary:"Libertinus Math", system-ui;
+    --font-secondary:"Libre Baskerville", serif;
+    --font-extra:"Sriracha", "cursive"; 
+    --color-linkedin:#0077B5;
+    --color-instagram: #E1306C;
+    --color-youtube: #ff0000;
+    --color-hoverPrime:#3B82F6;
+    --color-hoverSecond: #f70776;
+    --color-navbarPrime:#4d12ee;
+    --font-poppins: "Poppins", sans-serif;
+}
+
+*{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar{
+        display : none;
+}}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, #3B82F6, #8B5CF6, #EC4899);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Glow Effect */
+.glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+}
+
+/* Navbar */
+.mobile-nav {
+    @apply fixed top-13 left-0 bg-primary w-full ;
+}
+
+.navbar ul li {
+    @apply hover:bg-gradient-to-r hover:text-hoverPrime hover:border-b-2 hover:bg-clip-text transition duration-300
+}
+
+.mobile-nav ul li {
+    @apply text-center border-b-2 pb-2 h-full font-sans text-base;
+}
+
+/* Home */
+.home {
+ @apply flex flex-col min-h-screen items-center justify-center bg-linear-to-b from-secondary to-primary max-w-full; 
+}
+
+.headName {
+ @apply md:text-8xl md:font-semibold md:text-center md:text-white font-semibold text-5xl text-white font-secondary hover:text-hoverPrime hover:cursor-pointer;
+}
+
+/* About */
+.link-btn {
+   @apply m-2 h-10 w-10 rounded-full flex items-center justify-center border-2 bg-white border-primary hover:bg-primary hover:border-primary hover:text-white transition;
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3B82F6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
