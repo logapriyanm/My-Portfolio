@@ -76,7 +76,7 @@ const Projects = () => {
       : ProjectsData.filter((project) => project.category === selectedCategory);
 
   return (
-    <div id="projects" className="min-h-screen bg-gradient-to-l from-primary to-secondary md:p-10 flex flex-col items-center relative overflow-hidden">
+    <div id="projects" className="min-h-screen bg-gradient-to-r from-primary to-secondary md:p-10 py-5 flex flex-col items-center relative overflow-hidden">
       {/* Background Animation - Same as Footer */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(25)].map((_, i) => (

@@ -52,7 +52,7 @@ const Skills = () => {
         <section 
             id='skills' 
             ref={ref}
-            className="min-h-screen bg-gradient-to-r from-primary to-secondary relative overflow-hidden"
+            className="min-h-screen bg-gradient-to-l from-primary to-secondary relative overflow-hidden"
         >
             {/* Background Animation - Same as Footer */}
             <div className="absolute inset-0 overflow-hidden">

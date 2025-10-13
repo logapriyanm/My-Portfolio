@@ -37,7 +37,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-primary to-secondary text-white py-16 px-4 md:px-24 relative overflow-hidden" id="contact">
+    <section className="bg-gradient-to-l from-primary to-secondary text-white py-16 px-4 md:px-24 relative overflow-hidden" id="contact">
       {/* Background Animation - Same as Footer */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(25)].map((_, i) => (
