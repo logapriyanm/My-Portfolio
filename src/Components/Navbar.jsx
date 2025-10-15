@@ -49,6 +49,14 @@ const Navbar = () => {
         }
     };
 
+    // Function to handle social link clicks
+    const handleSocialLinkClick = (href) => {
+        // Open the link in a new tab
+        window.open(href, '_blank', 'noopener,noreferrer');
+        // Keep the menu open or close it - you can choose:
+        // setToggleMenu(false); // Uncomment this if you want to close menu after clicking social link
+    };
+
     const navItems = [
         { 
             name: "Home", 
@@ -77,12 +85,7 @@ const Navbar = () => {
         }
     ];
 
-    const socialLinks = [
-        { icon: <RiLinkedinFill />, href: "https://www.linkedin.com/in/logapriyan-m/", color: "text-blue-400" },
-        { icon: <RiGithubFill />, href: "https://github.com/logapriyanm", color: "text-gray-300" },
-        { icon: <RiInstagramFill />, href: "https://www.instagram.com/distres_x.heart_/", color: "text-pink-400" },
-        { icon: <RiYoutubeFill />, href: "https://www.youtube.com/@INFO_LOKI_TAMIL", color: "text-red-400" }
-    ];
+  
 
     const menuVariants = {
         open: {
@@ -382,34 +385,7 @@ const Navbar = () => {
                             ))}
                         </div>
 
-                        {/* Social Links - SIMPLE FIX */}
-                        <motion.div 
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.8 }}
-                            className="flex flex-col items-center gap-3 mt-auto mb-4"
-                        >
-                            <p className="text-gray-400 text-sm font-medium">Connect with me</p>
-                            <div className="flex justify-center gap-4">
-                                {socialLinks.map((social, index) => (
-                                    <motion.a
-                                        key={index}
-                                        href={social.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        initial={{ opacity: 0, scale: 0 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ delay: index * 0.1 + 0.9 }}
-                                        whileHover={{ scale: 1.2, y: -2 }}
-                                        whileTap={{ scale: 0.9 }}
-                                        className={`p-2 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 text-lg ${social.color}`}
-                                        // REMOVED onClick handler - let the <a> tag work naturally
-                                    >
-                                        {social.icon}
-                                    </motion.a>
-                                ))}
-                            </div>
-                        </motion.div>
+                       
                     </motion.div>
                 )}
             </AnimatePresence>
