@@ -268,12 +268,13 @@ const Navbar = () => {
             {/* Full Screen Mobile Navigation */}
             <AnimatePresence>
                 {toggleMenu && (
-                    <motion.nav 
+                    <motion.div 
                         variants={menuVariants}
                         initial="closed"
                         animate="open"
                         exit="closed"
                         className="fixed inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 backdrop-blur-2xl md:hidden z-40 p-4 flex flex-col relative overflow-hidden"
+                        onClick={() => setToggleMenu(false)}
                     >
                         {/* Mobile Menu Background Animation */}
                         <div className="absolute inset-0 overflow-hidden">
@@ -304,7 +305,10 @@ const Navbar = () => {
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1 }}
-                            onClick={() => setToggleMenu(false)}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setToggleMenu(false);
+                            }}
                             className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
@@ -318,6 +322,7 @@ const Navbar = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
                             className="flex flex-col items-center gap-3 mt-8 mb-6"
+                            onClick={(e) => e.stopPropagation()}
                         >
                             <motion.img 
                                 src={Profile1} 
@@ -332,7 +337,10 @@ const Navbar = () => {
                         </motion.div>
 
                         {/* Navigation Items - Reduced Padding/Margin */}
-                        <div className="flex flex-col gap-2 w-full px-2 mb-6 relative z-10">
+                        <div 
+                            className="flex flex-col gap-2 w-full px-2 mb-6 relative z-10"
+                            onClick={(e) => e.stopPropagation()}
+                        >
                             {navItems.map((item, index) => (
                                 <motion.button
                                     key={item.id}
@@ -343,7 +351,10 @@ const Navbar = () => {
                                     transition={{ delay: index * 0.1 + 0.3 }}
                                     whileHover={{ scale: 1.02, y: -1 }}
                                     whileTap={{ scale: 0.98 }}
-                                    onClick={() => scrollToSection(item.id)}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        scrollToSection(item.id);
+                                    }}
                                     className={`flex items-center gap-4 p-3 rounded-xl text-left transition-all duration-300 border ${
                                         activeSection === item.id
                                             ? 'bg-blue-500/20 text-white shadow-lg shadow-blue-500/30 border-blue-400'
@@ -371,7 +382,7 @@ const Navbar = () => {
                             ))}
                         </div>
 
-                        {/* Social Links - Smaller */}
+                        {/* Social Links - SIMPLE FIX */}
                         <motion.div 
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -392,13 +403,14 @@ const Navbar = () => {
                                         whileHover={{ scale: 1.2, y: -2 }}
                                         whileTap={{ scale: 0.9 }}
                                         className={`p-2 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 text-lg ${social.color}`}
+                                        // REMOVED onClick handler - let the <a> tag work naturally
                                     >
                                         {social.icon}
                                     </motion.a>
                                 ))}
                             </div>
                         </motion.div>
-                    </motion.nav>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </motion.header>
