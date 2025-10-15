@@ -12,19 +12,29 @@ import BlogImage from "../assets/images/BlogImage.png";
 import ContactManagement from "../assets/images/ContactMERN.png"
 import TodoImage from "../assets/images/TodoImage.png"
 import QuickChat from "../assets/images/QuickChat.png"
+import Novamart from "../assets/images/Novamart.png"
 
 
 const projects = [
   {
     title: "Logi Integrated Farm",
     description:
-       " Enhanced my skills in building responsive layouts, managing state, and integrating interactive features. This project demonstrates my ability to create modern interfaces and deliver seamless user experiences for clients in the agriculture sector.",
+       " A full-stack e-commerce platform for agricultural products featuring user authentication, cart management, and secure payments. Built with modern React and Node.js to deliver seamless shopping experiences for farm fresh produce and livestock",
     image: IntegratedFarm,
-    tags: ["HTML", "Tailwind CSS", "JavaScript", "React"],
-    category: "frontend",
-    demoLink: "https://logi-integrated-farm.onrender.com",
-    codeLink: "https://github.com/logapriyanm/Integrated-Farm.git"
+    tags: [ "Tailwind CSS", "React","MongoDB", "Node JS", "Express JS", "Stripe"],
+    category: "fullstack",
+    demoLink: "https://logi-integrated-farm.onrender.com/",
+    codeLink: "https://github.com/logapriyanm/Logi-Integrated-Farm.git"
   },
+  {
+  title: "Novamart E-Commerce",
+  description: "A full-stack fashion e-commerce platform with advanced features like size-based inventory, wishlist management, and secure payments. Built with modern MERN stack and Stripe integration for seamless shopping experiences.",
+  image: Novamart,
+  tags: ["React", "Node.js", "MongoDB", "Express", "Stripe", "Tailwind CSS"],
+  category: "fullstack",
+  demoLink: "https://novamart-ecom.onrender.com",
+  codeLink: "https://github.com/logapriyanm/NovaMart.git"
+},
   {
     title: "RealTime Chat App",
     description:
