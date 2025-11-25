@@ -17,7 +17,7 @@ const MySkills = [
     { name: "CSS", label: "User Interface", icon: <FaCss3Alt className="text-blue-500" /> },
     { name: "TailwindCSS", label: "User Interface", icon: <SiTailwindcss className="text-sky-400" /> },
     { name: "JavaScript", label: "Interaction", icon: <SiJavascript className="text-yellow-400" /> },
-    { name: "React JS", label: "Framework", icon: <FaReact className="text-cyan-400 " /> },
+    { name: "React JS", label: "Js Library", icon: <FaReact className="text-cyan-400 " /> },
     { name: "NodeJS", label: "Web Server", icon: <FaNodeJs className="text-green-500  " /> },
     { name: "Express JS", label: "Server Framework", icon: <SiExpress size={40} className="text-white bg-black rounded-full p-2" /> },
     { name: "Mongo DB", label: " Database", icon: <DiMongodb className="text-[#4db33d] " /> },
