@@ -87,9 +87,6 @@ const Home = () => {
             'A FULL STACK DEVELOPER',
             2000,
 
-            2000,
-            'A JUNIOR WEB DEVELOPER',
-            2000,
           ]}
           wrapper="h3"
           speed={50}
