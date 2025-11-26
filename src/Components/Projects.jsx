@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -147,7 +147,7 @@ const Projects = () => {
               {/* Swiper */}
               <Swiper
                 modules={[Navigation]}
-                navigation
+                /* navigation removed so default arrows won't show, we use custom buttons below */
                 grabCursor={true}
                 spaceBetween={30}
                 slidesPerView={1}
@@ -173,6 +173,22 @@ const Projects = () => {
                 onClick={() => slideOnce("right")}
                 className="absolute right-0 top-0 h-full w-[50px] z-10 cursor-pointer"
               />
+
+              {/* Custom Navigation Buttons - Outside Swiper (chevrons like Skills) */}
+              <button 
+                aria-label="Previous projects"
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-white/20"
+                onClick={() => swiperRef.current?.slidePrev()}
+              >
+                <FaChevronLeft className="text-white text-lg" />
+              </button>
+              <button 
+                aria-label="Next projects"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-white/20"
+                onClick={() => swiperRef.current?.slideNext()}
+              >
+                <FaChevronRight className="text-white text-lg" />
+              </button>
             </>
           ) : filteredProjects.length === 1 ? (
             <div className="flex justify-center">
@@ -214,6 +230,14 @@ const Projects = () => {
           </a>
         </motion.div>
       </div>
+
+      {/* Add CSS to hide default Swiper navigation just in case */}
+      <style jsx>{`
+        .swiper-button-next,
+        .swiper-button-prev {
+          display: none !important;
+        }
+      `}</style>
     </div>
   );
 };
