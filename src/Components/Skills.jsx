@@ -167,7 +167,7 @@ const Skills = () => {
                                 <SwiperSlide key={idx}>
                                     <motion.div
                                         whileHover={{ scale: 1.01 }}
-                                        className="bg-[#334155] border md:h-auto h-90 border-gray-600 p-4 sm:p-6 rounded-xl flex flex-col items-center justify-center hover:bg-[#1f2937] transition-all duration-300"
+                                        className="bg-[#334155] border md:h-auto h-10 border-gray-600 p-1 sm:p-1 rounded-xl flex flex-col items-center justify-center hover:bg-[#1f2937] transition-all duration-300"
                                     >
                                         <motion.img
                                             src={d.image}
