@@ -67,7 +67,7 @@ const Skills = () => {
                 ))}
             </div>
 
-            <div className="relative z-10 w-full mx-auto px-4 flex flex-col md:flex-row justify-center  gap-6 items-center md:pt-30  py-10  ">
+            <div className="relative z-10 w-full mx-auto px-4 flex flex-col md:flex-row justify-center gap-6 items-center md:pt-30 py-10">
                 {/* Left: Skills */}
                 <motion.div
                     variants={containerVariants}
@@ -80,45 +80,45 @@ const Skills = () => {
                     </motion.h1>
 
                     <div className="p-5">
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {/* MOBILE: 2 columns; each card stacked (icon on top, text below).
+                            Desktop (md+) returns to original (icon left, text right) */}
+                        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
                             {MySkills.map((skill, index) => (
                                 <motion.button
                                     key={index}
                                     variants={itemVariants}
                                     whileHover={{ scale: 1.03 }}
                                     className={`
-                        flex
-                        flex-row     /* mobile: icon left, text right */
-                        /* md+: icon above, text below */
-                        items-center
-                        md:items-center
-                        gap-3
-                        p-4
-                        bg-[#334155]
-                        hover:bg-[#1f2937]
-                        rounded-xl
-                        transition-all
-                        border border-[#333]
-                        cursor-pointer
-                        text-left md:text-center
-                    `}
+                                        flex flex-col md:flex-row      /* mobile: column (icon on top), md+: row (icon left) */
+                                        items-center md:items-center
+                                        gap-3
+                                        p-4
+                                        min-h-[72px]
+                                        bg-[#334155]
+                                        hover:bg-[#1f2937]
+                                        rounded-xl
+                                        transition-all
+                                        border border-[#333]
+                                        cursor-pointer
+                                        text-center md:text-left
+                                        w-full
+                                    `}
                                     aria-label={`${skill.name} skill`}
                                 >
-                                    {/* icon container: floats while in view and grows on hover */}
+                                    {/* icon container: centered on mobile (top) and left on md+ */}
                                     <motion.div
                                         variants={iconFloat}
                                         initial="hidden"
                                         animate={isInView ? "visible" : "hidden"}
-                                        whileHover={{ scale: 1.2, rotate: 8 }}
-                                        className="text-2xl  flex-shrink-0"
+                                        whileHover={{ scale: 1.15 }}
+                                        className="w-12 h-12 flex items-center justify-center flex-shrink-0 mb-2 md:mb-0 md:mr-3"
                                         style={{ color: getColorForSkill(skill.name) }}
                                     >
-                                        {skill.icon}
+                                        <span className="text-2xl md:text-2xl">{skill.icon}</span>
                                     </motion.div>
 
                                     <div className="flex-1">
-                                        <p className="font-medium text-base md:text-lg text-white">{skill.name}</p>
+                                        <p className="font-medium text-base md:text-lg text-white leading-tight">{skill.name}</p>
                                         <p className="text-xs md:text-sm font-normal text-gray-300">{skill.label}</p>
                                     </div>
                                 </motion.button>
@@ -135,7 +135,7 @@ const Skills = () => {
                     className="w-full md:flex-1 text-white font-poppins pt-2 md:pt-6"
                 >
                     <motion.h2
-                        className="text-xl sm:text-2xl md:text-3xl font-bold text-center  pb-2 my-4"
+                        className="text-xl sm:text-2xl md:text-3xl font-bold text-center pb-2 my-4"
                         whileInView={{ scale: 1.05 }}
                     >
                         CERTIFICATES
@@ -186,13 +186,13 @@ const Skills = () => {
                         </Swiper>
 
                         {/* Custom Navigation Buttons - Outside Swiper */}
-                        <button 
+                        <button
                             className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-white/20"
                             onClick={() => swiperRef.current?.slidePrev()}
                         >
                             <FaChevronLeft className="text-white text-lg" />
                         </button>
-                        <button 
+                        <button
                             className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-white/20"
                             onClick={() => swiperRef.current?.slideNext()}
                         >
