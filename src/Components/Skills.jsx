@@ -117,8 +117,8 @@ const Skills = () => {
                                         <span className="text-2xl md:text-2xl">{skill.icon}</span>
                                     </motion.div>
 
-                                    <div className="flex-1">
-                                        <p className="font-medium text-base md:text-lg text-white leading-tight">{skill.name}</p>
+                                    <div className="flex-1 gap-2">
+                                        <p className="font-medium text-base md:text-lg  text-white leading-tight">{skill.name}</p>
                                         <p className="text-xs md:text-sm font-normal text-gray-300">{skill.label}</p>
                                     </div>
                                 </motion.button>
@@ -167,7 +167,7 @@ const Skills = () => {
                                 <SwiperSlide key={idx}>
                                     <motion.div
                                         whileHover={{ scale: 1.01 }}
-                                        className="bg-[#334155] border md:h-auto h-10 border-gray-600 p-1 sm:p-1 rounded-xl flex flex-col items-center justify-center hover:bg-[#1f2937] transition-all duration-300"
+                                        className="bg-[#334155] border md:h-auto h-100 border-gray-600 p-4 sm:p-6 rounded-xl flex flex-col items-center justify-center hover:bg-[#1f2937] transition-all duration-300"
                                     >
                                         <motion.img
                                             src={d.image}
