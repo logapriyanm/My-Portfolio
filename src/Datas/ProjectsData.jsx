@@ -65,6 +65,16 @@ const projects = [
   demoLink: "https://todolist-mern-e0un.onrender.com", 
   codeLink: "https://github.com/logapriyanm/todolist-MERN.git"
 },
+  {
+    title: "User Data",
+    description:
+      "A full-stack CRUD application with React.js frontend and Node.js backend. It allows users to add, edit, delete, and search user records, with persistent data storage using JSON files.",
+    image: CrudApp,
+    tags: ["HTML", "Tailwind CSS", "JavaScript", "React", "Node js", "Express js"],
+    category: "fullstack",
+    demoLink: "https://user-data-frontend-gtb4.onrender.com/",
+    codeLink: "https://github.com/logapriyanm/User-Data.git"
+  },
 
 
   {
@@ -107,16 +117,7 @@ const projects = [
     demoLink: "https://logapriyanm.github.io/Calculator/",
     codeLink: "https://github.com/logapriyanm/Calculator"
   },
-  {
-    title: "User Data",
-    description:
-      "A full-stack CRUD application with React.js frontend and Node.js backend. It allows users to add, edit, delete, and search user records, with persistent data storage using JSON files.",
-    image: CrudApp,
-    tags: ["HTML", "Tailwind CSS", "JavaScript", "React", "Node js", "Express js"],
-    category: "fullstack",
-    demoLink: "https://user-data-frontend-gtb4.onrender.com/",
-    codeLink: "https://github.com/logapriyanm/User-Data.git"
-  },
+
   {
     title: "Weather App",
     description:
